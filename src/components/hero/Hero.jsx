@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useGetUserQuery } from "@/redux/api/category-api";
 import BasicCard from "../card/Card";
+import AddUser from "../addUser/AddUser";
 
 const Hero = () => {
   const { data, isLoading, isSuccess } = useGetUserQuery();
@@ -23,7 +24,10 @@ const Hero = () => {
 
   return (
     <div className="wrapper">
-      <h2 className="text-center text-3xl py-4">User</h2>
+      <div className="flex justify-between items-center">
+        <AddUser />
+        <h2 className="text-center text-3xl py-4">Users</h2>
+      </div>
       {isLoading && (
         <div className="wrapper mx-auto p-4">
           <div className="sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

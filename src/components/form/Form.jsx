@@ -3,16 +3,11 @@ import { Button, Form, Input, Select } from "antd";
 import { useUpdateUserMutation } from "@/redux/api/category-api";
 import { v4 as uuid } from "uuid";
 
-const UniModal = ({ id, user }) => {
-  const [updateUser] = useUpdateUserMutation();
-
-  console.log(user.id);
-  console.log(user);
+const UniModal = ({ id, user, open, SetOpen }) => {
+  const [updateUser, { isLoading }] = useUpdateUserMutation();
 
   const onFinish = (values) => {
-    // updateUser(id, values);
-    values.id = user.id;
-    console.log(values);
+    updateUser({ id: user.id, body: values });
   };
 
   const onFinishFailed = (errorInfo) => {

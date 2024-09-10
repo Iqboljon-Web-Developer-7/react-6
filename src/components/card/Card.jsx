@@ -60,7 +60,7 @@ export default function BasicCard({
             className="w-auto min-h-screen important-modal flex items-center justify-center"
             onClick={(e) => handleModal(e)}
           >
-            <UniForm user={user} />
+            <UniForm open={open} setOpen={setOpen} user={user} />
           </div>
         </UniModal>
         <Button size="small" onClick={() => handleDelete(id)}>
