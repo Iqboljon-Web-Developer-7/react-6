@@ -9,6 +9,12 @@ export const categoryApi = api.injectEndpoints({
       }),
       providesTags: ["Users"],
     }),
+    getLimitedUsers: build.query({
+      query: ({ limit, page }) => ({
+        url: `/users?limit=${limit}&page=${page}`,
+      }),
+      providesTags: ["Users"],
+    }),
     createUser: build.mutation({
       query: (body) => ({
         url: "/users",
@@ -43,4 +49,5 @@ export const {
   useCreateUserMutation,
   useUpdateUserMutation,
   useDeleteUserMutation,
+  useGetLimitedUsersQuery,
 } = categoryApi;

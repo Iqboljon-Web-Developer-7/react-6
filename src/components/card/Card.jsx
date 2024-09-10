@@ -10,6 +10,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import UniModal from "../modal/Modal";
 import { Edit } from "@mui/icons-material";
 import UniForm from "../form/Form";
+const girl =
+  "https://i.pinimg.com/236x/fd/20/4b/fd204b723779072a2e55cc05d4cece6e.jpg";
+const boy =
+  "https://i.pinimg.com/736x/03/21/7e/03217e2517907c95659946ce9b9ba39e.jpg";
 
 export default function BasicCard({
   user,
@@ -37,19 +41,25 @@ export default function BasicCard({
       <CardContent
         className={`${gender == "Male" ? "bg-blue-200" : "bg-red-200"}`}
       >
-        <Typography gutterBottom>
+        <img
+          className="h-52 object-cover rounded-md"
+          src={gender == "Female" ? girl : boy}
+        />
+        <Typography gutterBottom className="mt-3">
           {fname} {lname}
         </Typography>
         <Typography
           variant="h5"
-          className="text-xl lg:text-[1.92vw] xl:text-[1.7rem]"
+          className="text-xl lg:text-[1.92vw] xl:text-[1.7rem] line-clamp-1"
         >
           {job}
         </Typography>
-        <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
-          {gender}
-        </Typography>
-        <Typography className="line-clamp-2" variant="body2">
+        <Typography
+          title={bio}
+          component={"p"}
+          className="line-clamp-2 mt-3"
+          variant="body2"
+        >
           {bio}
         </Typography>
         {children}

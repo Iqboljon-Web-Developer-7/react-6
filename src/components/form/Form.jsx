@@ -2,8 +2,9 @@ import React from "react";
 import { Button, Form, Input, Select } from "antd";
 import { useUpdateUserMutation } from "@/redux/api/category-api";
 import { v4 as uuid } from "uuid";
+import { Box, CircularProgress } from "@mui/material";
 
-const UniModal = ({ id, user, open, SetOpen }) => {
+const UniModal = ({ id, user, open, setOpen }) => {
   const [updateUser, { isLoading }] = useUpdateUserMutation();
 
   const onFinish = (values) => {
@@ -97,7 +98,15 @@ const UniModal = ({ id, user, open, SetOpen }) => {
 
       <Form.Item className="flex items-center justify-center mt-10">
         <Button type="primary" htmlType="submit">
-          Submit
+          {isLoading ? (
+            <>
+              <Box sx={{ display: "flex" }}>
+                <CircularProgress className="w-6 h-6" />
+              </Box>
+            </>
+          ) : (
+            "EDIT"
+          )}
         </Button>
       </Form.Item>
     </Form>
