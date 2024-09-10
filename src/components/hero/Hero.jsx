@@ -34,7 +34,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="bg-[#00000033] backdrop-blur-sm sticky top-0">
+      <div className="bg-[#00008833] backdrop-blur-sm sticky top-0">
         <div className="wrapper flex justify-between items-center">
           <AddUser />
           <h2 className="text-center text-3xl py-4 text-white">Users</h2>
