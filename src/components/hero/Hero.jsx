@@ -40,7 +40,7 @@ const Hero = () => {
           <h2 className="text-center text-3xl py-4 text-white">Users</h2>
         </div>
       </div>
-      <div className="wrapper">
+      <div className="wrapper py-5">
         {isLoading && (
           <div className="wrapper mx-auto p-4">
             <div className="sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
