@@ -76,9 +76,9 @@ const Hero = () => {
             {isFetching ? "..." : "Prev"}
           </Button>
           <span>
-            Page: {page} / {Math.round(total / 8)}
+            Page: {page} / {Math.ceil(total / 8)}
           </span>
-          <Button // 18     3   * 8  = 24
+          <Button
             disabled={total <= page * 8}
             onClick={() => setPage((p) => p + 1)}
             className=""

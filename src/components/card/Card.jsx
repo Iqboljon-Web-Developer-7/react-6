@@ -8,7 +8,6 @@ import { useDeleteUserMutation } from "@/redux/api/category-api";
 import { Box } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import UniModal from "../modal/Modal";
-import { Edit } from "@mui/icons-material";
 import UniForm from "../form/Form";
 const girl =
   "https://i.pinimg.com/236x/fd/20/4b/fd204b723779072a2e55cc05d4cece6e.jpg";
